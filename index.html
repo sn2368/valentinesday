@@ -149,4 +149,84 @@
             background: white;
             z-index: 5;
             opacity: 0;
-            box-shadow: 0 0 10px rgba(0,0,0,
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        #open:checked ~ .page {
+            opacity: 1;
+            z-index: 999;
+            animation: appear 600ms forwards;
+            cursor: pointer;
+        }
+
+        @keyframes appear { to { opacity: 1; } }
+
+        #out:checked ~ .page {
+            animation: out 1000ms ease forwards;
+        }
+
+        @keyframes out {
+            to { top: -220px; height: 420px; z-index: 1111111; }
+        }
+
+        /* The Message */
+        .message {
+            position: absolute;
+            top: -200px;
+            left: 40px;
+            font-family: "Delius", cursive;
+            width: 280px;
+            opacity: 0;
+            color: #333;
+            line-height: 1.5;
+            pointer-events: none;
+            z-index: 11111111;
+        }
+
+        #out:checked ~ .message {
+            animation: text 1000ms forwards;
+            animation-delay: 300ms; /* Synced with page rising */
+        }
+
+        @keyframes text {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper" id="mainWrapper" onclick="flipEnvelope()">
+        <div class="front">
+            <h1>To: Ms.Pari Kadyan</h1>
+            <img class="stamp" src="stamp.png" alt="stamp">
+        </div>
+
+        <div class="back" onclick="event.stopPropagation()">
+            <input type="checkbox" id="open">
+            <label for="open" class="seal"></label>
+            
+            <div class="panel"></div>
+            
+            <div class="down"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            
+            <input type="checkbox" id="out">
+            <label for="out" class="page"></label>
+            
+            <div class="message">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus eleifend nisl eget molestie. 
+                Aliquam facilisis euismod lorem, quis dignissim turpis. Fusce molestie quam magna. 
+                <br><br>
+                Happy Coding!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flipEnvelope() {
+            document.getElementById('mainWrapper').classList.add('is-flipped');
+        }
+    </script>
+</body>
+</html>
