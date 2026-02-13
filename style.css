@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 
         body {
             background: #662222;
@@ -150,13 +152,13 @@
         }
 
         @keyframes out {
-            to { top: -164px; height: 450px; z-index: 1111111; }
+            to { top: -195px; height: 578px; z-index: 1111111; }
         }
 
         .message {
             position: absolute;
-            top: -124px;
-            left: 47px;
+            top: -162px;
+            left: 45px;
             font-family: "Delius", cursive;
             width: 300px;
             opacity: 0;
@@ -170,3 +172,26 @@
         @keyframes text {
             to { opacity: 1; z-index: 11111112; }
         }
+.sambodhan{
+    position: absolute;
+    top: -22px;
+    left: -6px;
+    font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.sambodhan::after{
+    content: 'YOURS TRULY BHONDU';
+    display: block;
+    position: absolute;
+    top: 522px;
+    left: 0px;
+    width: 113px;
+    font-size: 13px;
+}
+.massege{
+    font-size: 10px;
+    font-family: "Coming Soon", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
